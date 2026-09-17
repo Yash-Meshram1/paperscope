@@ -37,7 +37,7 @@ python -m pip install -r requirements-lock-cpu.txt
 ollama pull qwen3.5:9b
 ```
 
-The lock file records the tested Windows CPU environment. `requirements.txt` lists direct dependencies for other environments. Retrieval defaults to CPU. GPU retrieval requires a CUDA-enabled PyTorch installation and sufficient available VRAM; Ollama manages the generation model separately.
+
 
 Download the retrieval models once:
 
