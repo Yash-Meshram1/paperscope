@@ -1,0 +1,75 @@
+{
+  "provenance": "Development comparison benchmark: 10 questions.",
+  "questions": [
+    {
+      "question": "Compare how Self-RAG and CRAG handle unreliable retrieval.",
+      "expected_paper_ids": [
+        "self_rag_asai_2023",
+        "crag_yan_2024"
+      ]
+    },
+    {
+      "question": "How do RAPTOR and the original RAG paper differ in their retrieval approach?",
+      "expected_paper_ids": [
+        "raptor_sarthi_2024",
+        "rag_lewis_2020"
+      ]
+    },
+    {
+      "question": "Compare DPR and ColBERT as neural retrieval methods.",
+      "expected_paper_ids": [
+        "dpr_karpukhin_2020",
+        "colbert_khattab_2020"
+      ]
+    },
+    {
+      "question": "How do HyDE and DPR approach dense retrieval differently?",
+      "expected_paper_ids": [
+        "hyde_gao_2023",
+        "dpr_karpukhin_2020"
+      ]
+    },
+    {
+      "question": "Compare Self-RAG and RAPTOR as approaches for improving retrieval-augmented generation.",
+      "expected_paper_ids": [
+        "self_rag_asai_2023",
+        "raptor_sarthi_2024"
+      ]
+    },
+    {
+      "question": "How do CRAG and Self-RAG decide whether retrieved information should be trusted or used?",
+      "expected_paper_ids": [
+        "crag_yan_2024",
+        "self_rag_asai_2023"
+      ]
+    },
+    {
+      "question": "What do Lost in the Middle and RAPTOR suggest about handling large amounts of context?",
+      "expected_paper_ids": [
+        "lost_in_middle_liu_2023",
+        "raptor_sarthi_2024"
+      ]
+    },
+    {
+      "question": "How do the original RAG paper and Self-RAG differ in when retrieval is performed?",
+      "expected_paper_ids": [
+        "rag_lewis_2020",
+        "self_rag_asai_2023"
+      ]
+    },
+    {
+      "question": "Compare the retrieval ideas in the RAG survey with those proposed by CRAG.",
+      "expected_paper_ids": [
+        "rag_survey_gao_2023",
+        "crag_yan_2024"
+      ]
+    },
+    {
+      "question": "How are embeddings and reranking used across DPR and the Qwen3 Embedding paper?",
+      "expected_paper_ids": [
+        "dpr_karpukhin_2020",
+        "qwen3_embedding_2025"
+      ]
+    }
+  ]
+}

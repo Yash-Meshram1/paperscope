@@ -1,0 +1,29 @@
+# Local data and model storage
+/data/papers/
+/data/processed/
+/data/evaluation/runs/
+/storage/
+/models/
+
+# Python environments and generated files
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+*.egg-info/
+build/
+dist/
+
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+.streamlit/secrets.toml
+.vscode/
+.idea/
+*.log
+.DS_Store
+Thumbs.db

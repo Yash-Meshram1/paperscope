@@ -1,0 +1,8 @@
+# Serving dependencies; resolve and lock in the target notebook environment.
+# No model weights or ingestion dependencies are installed here.
+numpy>=1.26,<3
+qdrant-client>=1.14,<2
+rank-bm25==0.2.2
+sentence-transformers>=5,<6
+requests>=2.32,<3
+streamlit>=1.40,<2

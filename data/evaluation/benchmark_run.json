@@ -1,0 +1,1093 @@
+{
+  "timestamp": "2026-09-14T05:19:47.383298+00:00",
+  "entry_point": "Engine.retrieve -> smart_retrieve",
+  "provenance": {
+    "loaded_at": "2026-09-14T05:03:47.374575+00:00",
+    "corpus_sha256": "25baa779885e59aba5e4aa6d2270a56a35ad3229fb33438b16320a4fd134e1b6",
+    "embeddings_sha256": "044e6db5001f1141de8c5c0e0d5933b77e4c3812c38bef4e68c9efa4fa064008",
+    "saved_vector_norm_range": [
+      0.9980834722518921,
+      1.00375497341156
+    ],
+    "config": {
+      "collection": "research_papers",
+      "embedding_model": "Qwen/Qwen3-Embedding-0.6B",
+      "reranker_model": "Qwen/Qwen3-Reranker-0.6B",
+      "device": "cpu",
+      "ollama_model": "qwen3.5:9b",
+      "ollama_url": "http://localhost:11434/api/chat"
+    },
+    "versions": {
+      "numpy": "2.5.3",
+      "qdrant-client": "1.19.0",
+      "rank-bm25": "0.2.2",
+      "sentence-transformers": "5.7.0",
+      "transformers": "5.17.0",
+      "torch": "2.14.0"
+    },
+    "reranker_adapter": "CrossEncoder.predict; historical runtime equivalence unverified",
+    "model_revisions": {
+      "embedding": "97b0c614be4d77ee51c0cef4e5f07c00f9eb65b3",
+      "reranker": "e61197ed45024b0ed8a2d74b80b4d909f1255473"
+    },
+    "source_sha256": {
+      "chunking.py": "c61a016c23e0f4cadb731ea38badb3a7f46d2153178b6705ab0588a4f7b4efdf",
+      "engine.py": "20ac793172e42719939b4e685cdd709d9522436365f21020351bda35de9997d1",
+      "evaluation.py": "cadf1df2e2c4fe86d61779a95d7fda8ab72f6876e2d3dd63a608d8ef1c783a13",
+      "generation.py": "8fca0e95c4ebbd6d455488c15141f7ae2b7ad949e386eab52a64fb4aac3310a4",
+      "models.py": "9de9aaa3c8fcb8b4248b74b864bdd53a304531d7164be0a3a5c4f394fe10ecd4",
+      "paper_aliases.py": "559afed916388bcc7d2521aefb42a8f344cd7a30f8cd7fe0cda10dd16adbf9f6",
+      "parsing.py": "9d35b9ff7e4774a63cddb050a8c538f2c787ae271ef5f1b2639f86533abaac2a",
+      "retrieval.py": "a4050e057477de9236864f50e5159b4e2df5f4073c9f970a2ff232c0e8f1608e"
+    },
+    "retrieval_parameters": {
+      "contract": "global-top-k-v1",
+      "generic_candidate_k": "max(20,k)",
+      "named_candidate_k": "max(15,k)",
+      "rrf_k": 60,
+      "generic_max_per_paper": 2,
+      "named_selection": "reserve one then fill by score"
+    }
+  },
+  "runs": {
+    "single_paper": {
+      "mrr_at_k": 1.0,
+      "paper_recall_at_k": 1.0,
+      "k": 5,
+      "rows": [
+        {
+          "question": "What are the two RAG formulations introduced by Lewis et al.?",
+          "expected_paper_id": "rag_lewis_2020",
+          "category": "factual",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "rag_lewis_2020",
+            "self_rag_asai_2023",
+            "crag_yan_2024",
+            "rag_survey_gao_2023",
+            "crag_yan_2024"
+          ],
+          "chunk_ids": [
+            "rag_lewis_2020_s3_2_methods_0",
+            "self_rag_asai_2023_s3_2_related_work_0",
+            "crag_yan_2024_s0_corrective_retrieval_augmented_generation_0",
+            "rag_survey_gao_2023_s5_c_modular_rag_0",
+            "crag_yan_2024_s1_2_related_work_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "generic",
+          "latency_ms": 28221.15159999521
+        },
+        {
+          "question": "What type of non-parametric memory does the original RAG model use?",
+          "expected_paper_id": "rag_lewis_2020",
+          "category": "factual",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "rag_lewis_2020",
+            "rag_lewis_2020",
+            "rag_lewis_2020",
+            "rag_lewis_2020",
+            "rag_lewis_2020"
+          ],
+          "chunk_ids": [
+            "rag_lewis_2020_s1_abstract_0",
+            "rag_lewis_2020_s21_6_discussion_0",
+            "rag_lewis_2020_s2_1_introduction_0",
+            "rag_lewis_2020_s32_g_parameters_0",
+            "rag_lewis_2020_s9_3_experiments_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 17808.06350000057
+        },
+        {
+          "question": "How does DPR represent questions and passages for retrieval?",
+          "expected_paper_id": "dpr_karpukhin_2020",
+          "category": "factual",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "dpr_karpukhin_2020",
+            "dpr_karpukhin_2020",
+            "dpr_karpukhin_2020",
+            "dpr_karpukhin_2020",
+            "dpr_karpukhin_2020"
+          ],
+          "chunk_ids": [
+            "dpr_karpukhin_2020_s4_3_dense_passage_retriever_dpr_0",
+            "dpr_karpukhin_2020_s22_a_distant_supervision_0",
+            "dpr_karpukhin_2020_s5_3_1_overview_0",
+            "dpr_karpukhin_2020_s10_5_experiments_passage_retrieval_0",
+            "dpr_karpukhin_2020_s24_c_qualitative_analysis_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 17070.700399999623
+        },
+        {
+          "question": "Which datasets are used to evaluate DPR on open-domain question answering?",
+          "expected_paper_id": "dpr_karpukhin_2020",
+          "category": "factual",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "dpr_karpukhin_2020",
+            "dpr_karpukhin_2020",
+            "dpr_karpukhin_2020",
+            "dpr_karpukhin_2020",
+            "dpr_karpukhin_2020"
+          ],
+          "chunk_ids": [
+            "dpr_karpukhin_2020_s10_5_experiments_passage_retrieval_0",
+            "dpr_karpukhin_2020_s22_a_distant_supervision_0",
+            "dpr_karpukhin_2020_s18_7_related_work_1",
+            "dpr_karpukhin_2020_s11_5_1_main_results_0",
+            "dpr_karpukhin_2020_s17_6_2_results_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 18311.256400003913
+        },
+        {
+          "question": "What does MaxSim do in ColBERT?",
+          "expected_paper_id": "colbert_khattab_2020",
+          "category": "factual",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "colbert_khattab_2020",
+            "colbert_khattab_2020",
+            "colbert_khattab_2020",
+            "colbert_khattab_2020",
+            "colbert_khattab_2020"
+          ],
+          "chunk_ids": [
+            "colbert_khattab_2020_s3_1_introduction_1",
+            "colbert_khattab_2020_s11_3_6_end_to_end_topk_retrieval_with_colbert_0",
+            "colbert_khattab_2020_s6_3_1_architecture_0",
+            "colbert_khattab_2020_s10_3_5_topk_re_ranking_with_colbert_0",
+            "colbert_khattab_2020_s16_4_4_ablation_studies_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 21381.436399999075
+        },
+        {
+          "question": "What is the main idea behind late interaction in ColBERT?",
+          "expected_paper_id": "colbert_khattab_2020",
+          "category": "factual",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "colbert_khattab_2020",
+            "colbert_khattab_2020",
+            "colbert_khattab_2020",
+            "colbert_khattab_2020",
+            "colbert_khattab_2020"
+          ],
+          "chunk_ids": [
+            "colbert_khattab_2020_s2_acmreference_format_0",
+            "colbert_khattab_2020_s5_3_colbert_0",
+            "colbert_khattab_2020_s6_3_1_architecture_0",
+            "colbert_khattab_2020_s16_4_4_ablation_studies_0",
+            "colbert_khattab_2020_s18_5_conclusions_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 21982.264599995688
+        },
+        {
+          "question": "What is a hypothetical document in HyDE?",
+          "expected_paper_id": "hyde_gao_2023",
+          "category": "factual",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "hyde_gao_2023",
+            "hyde_gao_2023",
+            "hyde_gao_2023",
+            "hyde_gao_2023",
+            "hyde_gao_2023"
+          ],
+          "chunk_ids": [
+            "hyde_gao_2023_s1_abstract_0",
+            "hyde_gao_2023_s2_1_introduction_1",
+            "hyde_gao_2023_s6_3_2_hyde_0",
+            "hyde_gao_2023_s2_1_introduction_0",
+            "hyde_gao_2023_s3_2_related_works_1"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 22001.057100002072
+        },
+        {
+          "question": "How does Self-RAG decide when retrieval is necessary?",
+          "expected_paper_id": "self_rag_asai_2023",
+          "category": "factual",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "self_rag_asai_2023",
+            "self_rag_asai_2023",
+            "self_rag_asai_2023",
+            "self_rag_asai_2023",
+            "self_rag_asai_2023"
+          ],
+          "chunk_ids": [
+            "self_rag_asai_2023_s4_3_self_rag_learning_to_retrieve_generate_and_critique_0",
+            "self_rag_asai_2023_s3_2_related_work_1",
+            "self_rag_asai_2023_s10_3_3_self_rag_inference_0",
+            "self_rag_asai_2023_s18_6_conclusion_0",
+            "self_rag_asai_2023_s6_algorithm_1_self_rag_inference_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 19510.414199998195
+        },
+        {
+          "question": "What are reflection tokens in Self-RAG?",
+          "expected_paper_id": "self_rag_asai_2023",
+          "category": "factual",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "self_rag_asai_2023",
+            "self_rag_asai_2023",
+            "self_rag_asai_2023",
+            "self_rag_asai_2023",
+            "self_rag_asai_2023"
+          ],
+          "chunk_ids": [
+            "self_rag_asai_2023_s4_3_self_rag_learning_to_retrieve_generate_and_critique_0",
+            "self_rag_asai_2023_s5_3_1_problem_formalization_and_overview_0",
+            "self_rag_asai_2023_s8_3_2_1_training_the_critic_model_0",
+            "self_rag_asai_2023_s18_6_conclusion_0",
+            "self_rag_asai_2023_s3_2_related_work_1"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 19339.283799999976
+        },
+        {
+          "question": "What does the Lost in the Middle paper observe about information placed in the middle of long contexts?",
+          "expected_paper_id": "lost_in_middle_liu_2023",
+          "category": "factual",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "lost_in_middle_liu_2023",
+            "lost_in_middle_liu_2023",
+            "lost_in_middle_liu_2023",
+            "lost_in_middle_liu_2023",
+            "lost_in_middle_liu_2023"
+          ],
+          "chunk_ids": [
+            "lost_in_middle_liu_2023_s1_abstract_0",
+            "lost_in_middle_liu_2023_s20_7_conclusion_0",
+            "lost_in_middle_liu_2023_s2_1_introduction_1",
+            "lost_in_middle_liu_2023_s25_c_randomizing_distractor_order_in_multi_document_qa_0",
+            "lost_in_middle_liu_2023_s8_3_how_well_can_language_models_retrieve_from_input_contexts_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 18305.902699998114
+        },
+        {
+          "question": "How does HyDE perform zero-shot dense retrieval without relevance labels?",
+          "expected_paper_id": "hyde_gao_2023",
+          "category": "methodology",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "hyde_gao_2023",
+            "hyde_gao_2023",
+            "hyde_gao_2023",
+            "hyde_gao_2023",
+            "hyde_gao_2023"
+          ],
+          "chunk_ids": [
+            "hyde_gao_2023_s1_abstract_0",
+            "hyde_gao_2023_s4_3_methodology_0",
+            "hyde_gao_2023_s2_1_introduction_0",
+            "hyde_gao_2023_s9_4_2_web_search_0",
+            "hyde_gao_2023_s14_5_2_hyde_with_fine_tuned_encoder_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 20288.98879999906
+        },
+        {
+          "question": "How does RAPTOR organize documents for retrieval?",
+          "expected_paper_id": "raptor_sarthi_2024",
+          "category": "methodology",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "raptor_sarthi_2024",
+            "raptor_sarthi_2024",
+            "raptor_sarthi_2024",
+            "raptor_sarthi_2024",
+            "raptor_sarthi_2024"
+          ],
+          "chunk_ids": [
+            "raptor_sarthi_2024_s27_i_1_how_do_different_layers_impact_performance_0",
+            "raptor_sarthi_2024_s1_abstract_0",
+            "raptor_sarthi_2024_s4_3_methods_2",
+            "raptor_sarthi_2024_s4_3_methods_0",
+            "raptor_sarthi_2024_s6_4_1_contribution_of_the_tree_structure_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 21661.396100003913
+        },
+        {
+          "question": "How are recursive summaries created in RAPTOR?",
+          "expected_paper_id": "raptor_sarthi_2024",
+          "category": "methodology",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "raptor_sarthi_2024",
+            "raptor_sarthi_2024",
+            "raptor_sarthi_2024",
+            "raptor_sarthi_2024",
+            "raptor_sarthi_2024"
+          ],
+          "chunk_ids": [
+            "raptor_sarthi_2024_s16_e_hallucination_analysis_0",
+            "raptor_sarthi_2024_s1_abstract_0",
+            "raptor_sarthi_2024_s7_5_conclusion_0",
+            "raptor_sarthi_2024_s12_b_1_methodology_0",
+            "raptor_sarthi_2024_s5_4_experiments_2"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 20607.05769999913
+        },
+        {
+          "question": "How does CRAG evaluate whether retrieved documents are useful?",
+          "expected_paper_id": "crag_yan_2024",
+          "category": "methodology",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "crag_yan_2024",
+            "crag_yan_2024",
+            "crag_yan_2024",
+            "crag_yan_2024",
+            "crag_yan_2024"
+          ],
+          "chunk_ids": [
+            "crag_yan_2024_s4_4_1_overview_of_model_inference_0",
+            "crag_yan_2024_s11_5_1_tasks_datasets_and_metrics_0",
+            "crag_yan_2024_s0_corrective_retrieval_augmented_generation_1",
+            "crag_yan_2024_s19_6_conclusion_limitation_0",
+            "crag_yan_2024_s0_corrective_retrieval_augmented_generation_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 18490.007999993395
+        },
+        {
+          "question": "What corrective actions does CRAG take when retrieval quality is poor?",
+          "expected_paper_id": "crag_yan_2024",
+          "category": "methodology",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "crag_yan_2024",
+            "crag_yan_2024",
+            "crag_yan_2024",
+            "crag_yan_2024",
+            "crag_yan_2024"
+          ],
+          "chunk_ids": [
+            "crag_yan_2024_s11_5_1_tasks_datasets_and_metrics_0",
+            "crag_yan_2024_s4_4_1_overview_of_model_inference_0",
+            "crag_yan_2024_s16_5_6_robustness_to_retrieval_performance_0",
+            "crag_yan_2024_s19_6_conclusion_limitation_0",
+            "crag_yan_2024_s0_corrective_retrieval_augmented_generation_1"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 18135.6614000033
+        },
+        {
+          "question": "How does Self-RAG use retrieval and critique during inference?",
+          "expected_paper_id": "self_rag_asai_2023",
+          "category": "methodology",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "self_rag_asai_2023",
+            "self_rag_asai_2023",
+            "self_rag_asai_2023",
+            "self_rag_asai_2023",
+            "self_rag_asai_2023"
+          ],
+          "chunk_ids": [
+            "self_rag_asai_2023_s4_3_self_rag_learning_to_retrieve_generate_and_critique_0",
+            "self_rag_asai_2023_s18_6_conclusion_0",
+            "self_rag_asai_2023_s10_3_3_self_rag_inference_0",
+            "self_rag_asai_2023_s3_2_related_work_1",
+            "self_rag_asai_2023_s2_1_introduction_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 18678.844399997615
+        },
+        {
+          "question": "How does the original RAG architecture combine the retriever and generator?",
+          "expected_paper_id": "rag_lewis_2020",
+          "category": "methodology",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "rag_lewis_2020",
+            "rag_lewis_2020",
+            "rag_lewis_2020",
+            "rag_lewis_2020",
+            "rag_lewis_2020"
+          ],
+          "chunk_ids": [
+            "rag_lewis_2020_s3_2_methods_0",
+            "rag_lewis_2020_s4_2_1_models_0",
+            "rag_lewis_2020_s15_4_1_open_domain_question_answering_0",
+            "rag_lewis_2020_s1_abstract_0",
+            "rag_lewis_2020_s2_1_introduction_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 17486.188999995647
+        },
+        {
+          "question": "How is similarity computed between query and document representations in ColBERT?",
+          "expected_paper_id": "colbert_khattab_2020",
+          "category": "methodology",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "colbert_khattab_2020",
+            "colbert_khattab_2020",
+            "colbert_khattab_2020",
+            "colbert_khattab_2020",
+            "colbert_khattab_2020"
+          ],
+          "chunk_ids": [
+            "colbert_khattab_2020_s8_3_3_late_interaction_0",
+            "colbert_khattab_2020_s6_3_1_architecture_0",
+            "colbert_khattab_2020_s3_1_introduction_1",
+            "colbert_khattab_2020_s7_3_2_query_document_encoders_0",
+            "colbert_khattab_2020_s9_3_4_offline_indexing_computing_storing_document_embeddings_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 17227.577400000882
+        },
+        {
+          "question": "What retrieval techniques are discussed in the RAG survey?",
+          "expected_paper_id": "rag_survey_gao_2023",
+          "category": "paper_specific",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "rag_survey_gao_2023",
+            "rag_survey_gao_2023",
+            "rag_survey_gao_2023",
+            "rag_survey_gao_2023",
+            "rag_survey_gao_2023"
+          ],
+          "chunk_ids": [
+            "rag_survey_gao_2023_s16_v_augmentation_process_in_rag_0",
+            "rag_survey_gao_2023_s21_a_downstream_task_0",
+            "rag_survey_gao_2023_s1_i_introduction_1",
+            "rag_survey_gao_2023_s2_ii_overview_of_rag_0",
+            "rag_survey_gao_2023_s8_a_retrieval_source_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 18333.974399996805
+        },
+        {
+          "question": "What does the RAG survey describe as Naive RAG?",
+          "expected_paper_id": "rag_survey_gao_2023",
+          "category": "paper_specific",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "rag_survey_gao_2023",
+            "rag_survey_gao_2023",
+            "rag_survey_gao_2023",
+            "rag_survey_gao_2023",
+            "rag_survey_gao_2023"
+          ],
+          "chunk_ids": [
+            "rag_survey_gao_2023_s2_ii_overview_of_rag_0",
+            "rag_survey_gao_2023_s3_a_naive_rag_0",
+            "rag_survey_gao_2023_s0_retrieval_augmented_generation_for_large_language_models_a_survey_0",
+            "rag_survey_gao_2023_s4_b_advanced_rag_0",
+            "rag_survey_gao_2023_s32_viii_conclusion_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 17195.173799998884
+        },
+        {
+          "question": "How does the RAG survey describe iterative retrieval?",
+          "expected_paper_id": "rag_survey_gao_2023",
+          "category": "paper_specific",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "rag_survey_gao_2023",
+            "rag_survey_gao_2023",
+            "rag_survey_gao_2023",
+            "rag_survey_gao_2023",
+            "rag_survey_gao_2023"
+          ],
+          "chunk_ids": [
+            "rag_survey_gao_2023_s16_v_augmentation_process_in_rag_0",
+            "rag_survey_gao_2023_s17_a_iterative_retrieval_0",
+            "rag_survey_gao_2023_s27_b_rag_robustness_0",
+            "rag_survey_gao_2023_s19_c_adaptive_retrieval_0",
+            "rag_survey_gao_2023_s4_b_advanced_rag_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 17981.661999998323
+        },
+        {
+          "question": "What does the RAG survey say about modular RAG?",
+          "expected_paper_id": "rag_survey_gao_2023",
+          "category": "paper_specific",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "rag_survey_gao_2023",
+            "rag_survey_gao_2023",
+            "rag_survey_gao_2023",
+            "rag_survey_gao_2023",
+            "rag_survey_gao_2023"
+          ],
+          "chunk_ids": [
+            "rag_survey_gao_2023_s2_ii_overview_of_rag_0",
+            "rag_survey_gao_2023_s5_c_modular_rag_1",
+            "rag_survey_gao_2023_s32_viii_conclusion_0",
+            "rag_survey_gao_2023_s0_retrieval_augmented_generation_for_large_language_models_a_survey_0",
+            "rag_survey_gao_2023_s5_c_modular_rag_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 17570.022799998696
+        },
+        {
+          "question": "What limitations of long-context language models are discussed in Lost in the Middle?",
+          "expected_paper_id": "lost_in_middle_liu_2023",
+          "category": "paper_specific",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "lost_in_middle_liu_2023",
+            "lost_in_middle_liu_2023",
+            "lost_in_middle_liu_2023",
+            "lost_in_middle_liu_2023",
+            "lost_in_middle_liu_2023"
+          ],
+          "chunk_ids": [
+            "lost_in_middle_liu_2023_s1_abstract_0",
+            "lost_in_middle_liu_2023_s20_7_conclusion_0",
+            "lost_in_middle_liu_2023_s18_6_2_how_do_language_models_use_context_0",
+            "lost_in_middle_liu_2023_s11_4_why_are_language_models_not_robust_to_changes_in_the_position_of_relevant_information_0",
+            "lost_in_middle_liu_2023_s2_1_introduction_1"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 17359.357599998475
+        },
+        {
+          "question": "What retrieval failure problem motivates Corrective RAG?",
+          "expected_paper_id": "crag_yan_2024",
+          "category": "paper_specific",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "crag_yan_2024",
+            "crag_yan_2024",
+            "crag_yan_2024",
+            "crag_yan_2024",
+            "crag_yan_2024"
+          ],
+          "chunk_ids": [
+            "crag_yan_2024_s1_2_related_work_1",
+            "crag_yan_2024_s19_6_conclusion_limitation_0",
+            "crag_yan_2024_s0_corrective_retrieval_augmented_generation_1",
+            "crag_yan_2024_s11_5_1_tasks_datasets_and_metrics_0",
+            "crag_yan_2024_s0_corrective_retrieval_augmented_generation_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 18109.246500003792
+        },
+        {
+          "question": "What role does MaxSim play in ColBERT's late interaction mechanism?",
+          "expected_paper_id": "colbert_khattab_2020",
+          "category": "exact_term",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "colbert_khattab_2020",
+            "colbert_khattab_2020",
+            "colbert_khattab_2020",
+            "colbert_khattab_2020",
+            "colbert_khattab_2020"
+          ],
+          "chunk_ids": [
+            "colbert_khattab_2020_s6_3_1_architecture_0",
+            "colbert_khattab_2020_s3_1_introduction_1",
+            "colbert_khattab_2020_s11_3_6_end_to_end_topk_retrieval_with_colbert_0",
+            "colbert_khattab_2020_s16_4_4_ablation_studies_0",
+            "colbert_khattab_2020_s8_3_3_late_interaction_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 17941.475500003435
+        },
+        {
+          "question": "How is the Retrieve reflection token used in Self-RAG?",
+          "expected_paper_id": "self_rag_asai_2023",
+          "category": "exact_term",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "self_rag_asai_2023",
+            "self_rag_asai_2023",
+            "self_rag_asai_2023",
+            "self_rag_asai_2023",
+            "self_rag_asai_2023"
+          ],
+          "chunk_ids": [
+            "self_rag_asai_2023_s4_3_self_rag_learning_to_retrieve_generate_and_critique_0",
+            "self_rag_asai_2023_s3_2_related_work_1",
+            "self_rag_asai_2023_s18_6_conclusion_0",
+            "self_rag_asai_2023_s8_3_2_1_training_the_critic_model_0",
+            "self_rag_asai_2023_s2_1_introduction_1"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 18689.26339999598
+        },
+        {
+          "question": "What is retrieval collapse in the original RAG paper?",
+          "expected_paper_id": "rag_lewis_2020",
+          "category": "exact_term",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "rag_lewis_2020",
+            "rag_lewis_2020",
+            "rag_lewis_2020",
+            "rag_lewis_2020",
+            "rag_lewis_2020"
+          ],
+          "chunk_ids": [
+            "rag_lewis_2020_s33_h_retrieval_collapse_0",
+            "rag_lewis_2020_s20_5_related_work_1",
+            "rag_lewis_2020_s31_f_null_document_probabilities_0",
+            "rag_lewis_2020_s3_2_methods_0",
+            "rag_lewis_2020_s19_4_5_additional_results_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 15007.278099998075
+        },
+        {
+          "question": "How does RAPTOR use clustering when constructing its retrieval tree?",
+          "expected_paper_id": "raptor_sarthi_2024",
+          "category": "exact_term",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "raptor_sarthi_2024",
+            "raptor_sarthi_2024",
+            "raptor_sarthi_2024",
+            "raptor_sarthi_2024",
+            "raptor_sarthi_2024"
+          ],
+          "chunk_ids": [
+            "raptor_sarthi_2024_s11_b_ablation_study_on_clustering_mechanism_in_raptor_0",
+            "raptor_sarthi_2024_s5_4_experiments_2",
+            "raptor_sarthi_2024_s7_5_conclusion_0",
+            "raptor_sarthi_2024_s13_b_2_results_discussion_0",
+            "raptor_sarthi_2024_s12_b_1_methodology_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 21490.260900005524
+        },
+        {
+          "question": "What model family is introduced for text embedding and reranking in the Qwen3 Embedding paper?",
+          "expected_paper_id": "qwen3_embedding_2025",
+          "category": "embedding",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "qwen3_embedding_2025",
+            "qwen3_embedding_2025",
+            "qwen3_embedding_2025",
+            "qwen3_embedding_2025",
+            "qwen3_embedding_2025"
+          ],
+          "chunk_ids": [
+            "qwen3_embedding_2025_s12_5_conclusion_0",
+            "qwen3_embedding_2025_s1_abstract_0",
+            "qwen3_embedding_2025_s2_1_introduction_1",
+            "qwen3_embedding_2025_s5_3_1_training_objective_0",
+            "qwen3_embedding_2025_s2_1_introduction_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 17917.01969999849
+        },
+        {
+          "question": "How does the Qwen3 Embedding paper approach reranking?",
+          "expected_paper_id": "qwen3_embedding_2025",
+          "category": "embedding",
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "qwen3_embedding_2025",
+            "qwen3_embedding_2025",
+            "qwen3_embedding_2025",
+            "qwen3_embedding_2025",
+            "qwen3_embedding_2025"
+          ],
+          "chunk_ids": [
+            "qwen3_embedding_2025_s10_4_2_main_results_0",
+            "qwen3_embedding_2025_s5_3_1_training_objective_0",
+            "qwen3_embedding_2025_s2_1_introduction_1",
+            "qwen3_embedding_2025_s2_1_introduction_0",
+            "qwen3_embedding_2025_s1_abstract_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 17684.91139999969
+        }
+      ],
+      "fixture_sha256": "50b63cef2eb128f0733c74f5dcc31764e3fbe8da05f148b2c5861e507a0cdd0d",
+      "fixture_provenance": "notebooks/07_evaluation.ipynb: evaluation_questions (30 rows)"
+    },
+    "multi_paper": {
+      "mrr_at_k": 1.0,
+      "paper_recall_at_k": 1.0,
+      "k": 5,
+      "rows": [
+        {
+          "question": "Compare how Self-RAG and CRAG handle unreliable retrieval.",
+          "expected_paper_ids": [
+            "self_rag_asai_2023",
+            "crag_yan_2024"
+          ],
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "crag_yan_2024",
+            "crag_yan_2024",
+            "crag_yan_2024",
+            "self_rag_asai_2023",
+            "crag_yan_2024"
+          ],
+          "chunk_ids": [
+            "crag_yan_2024_s16_5_6_robustness_to_retrieval_performance_0",
+            "crag_yan_2024_s17_5_7_consistent_supplementation_of_web_search_knowledge_0",
+            "crag_yan_2024_s13_5_3_results_0",
+            "self_rag_asai_2023_s4_3_self_rag_learning_to_retrieve_generate_and_critique_0",
+            "crag_yan_2024_s0_corrective_retrieval_augmented_generation_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 38962.1788000004
+        },
+        {
+          "question": "How do RAPTOR and the original RAG paper differ in their retrieval approach?",
+          "expected_paper_ids": [
+            "raptor_sarthi_2024",
+            "rag_lewis_2020"
+          ],
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "raptor_sarthi_2024",
+            "raptor_sarthi_2024",
+            "raptor_sarthi_2024",
+            "rag_lewis_2020",
+            "raptor_sarthi_2024"
+          ],
+          "chunk_ids": [
+            "raptor_sarthi_2024_s7_5_conclusion_0",
+            "raptor_sarthi_2024_s13_b_2_results_discussion_0",
+            "raptor_sarthi_2024_s23_g_qualitative_analysis_0",
+            "rag_lewis_2020_s20_5_related_work_1",
+            "raptor_sarthi_2024_s2_1_introduction_1"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 39884.49000000401
+        },
+        {
+          "question": "Compare DPR and ColBERT as neural retrieval methods.",
+          "expected_paper_ids": [
+            "dpr_karpukhin_2020",
+            "colbert_khattab_2020"
+          ],
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "dpr_karpukhin_2020",
+            "colbert_khattab_2020",
+            "colbert_khattab_2020",
+            "colbert_khattab_2020",
+            "dpr_karpukhin_2020"
+          ],
+          "chunk_ids": [
+            "dpr_karpukhin_2020_s13_5_3_qualitative_analysis_0",
+            "colbert_khattab_2020_s5_3_colbert_0",
+            "colbert_khattab_2020_s12_4_experimental_evaluation_0",
+            "colbert_khattab_2020_s18_5_conclusions_0",
+            "dpr_karpukhin_2020_s4_3_dense_passage_retriever_dpr_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 35256.2906000021
+        },
+        {
+          "question": "How do HyDE and DPR approach dense retrieval differently?",
+          "expected_paper_ids": [
+            "hyde_gao_2023",
+            "dpr_karpukhin_2020"
+          ],
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "hyde_gao_2023",
+            "hyde_gao_2023",
+            "hyde_gao_2023",
+            "dpr_karpukhin_2020",
+            "hyde_gao_2023"
+          ],
+          "chunk_ids": [
+            "hyde_gao_2023_s4_3_methodology_0",
+            "hyde_gao_2023_s1_abstract_0",
+            "hyde_gao_2023_s15_6_conclusion_0",
+            "dpr_karpukhin_2020_s13_5_3_qualitative_analysis_0",
+            "hyde_gao_2023_s9_4_2_web_search_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 38681.41299999843
+        },
+        {
+          "question": "Compare Self-RAG and RAPTOR as approaches for improving retrieval-augmented generation.",
+          "expected_paper_ids": [
+            "self_rag_asai_2023",
+            "raptor_sarthi_2024"
+          ],
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "self_rag_asai_2023",
+            "self_rag_asai_2023",
+            "raptor_sarthi_2024",
+            "raptor_sarthi_2024",
+            "self_rag_asai_2023"
+          ],
+          "chunk_ids": [
+            "self_rag_asai_2023_s4_3_self_rag_learning_to_retrieve_generate_and_critique_0",
+            "self_rag_asai_2023_s18_6_conclusion_0",
+            "raptor_sarthi_2024_s7_5_conclusion_0",
+            "raptor_sarthi_2024_s1_abstract_0",
+            "self_rag_asai_2023_s1_abstract_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 45022.62709999923
+        },
+        {
+          "question": "How do CRAG and Self-RAG decide whether retrieved information should be trusted or used?",
+          "expected_paper_ids": [
+            "crag_yan_2024",
+            "self_rag_asai_2023"
+          ],
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "crag_yan_2024",
+            "self_rag_asai_2023",
+            "crag_yan_2024",
+            "crag_yan_2024",
+            "crag_yan_2024"
+          ],
+          "chunk_ids": [
+            "crag_yan_2024_s25_b_3_implementation_details_1",
+            "self_rag_asai_2023_s4_3_self_rag_learning_to_retrieve_generate_and_critique_0",
+            "crag_yan_2024_s0_corrective_retrieval_augmented_generation_1",
+            "crag_yan_2024_s17_5_7_consistent_supplementation_of_web_search_knowledge_0",
+            "crag_yan_2024_s16_5_6_robustness_to_retrieval_performance_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 42720.501499999955
+        },
+        {
+          "question": "What do Lost in the Middle and RAPTOR suggest about handling large amounts of context?",
+          "expected_paper_ids": [
+            "lost_in_middle_liu_2023",
+            "raptor_sarthi_2024"
+          ],
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "raptor_sarthi_2024",
+            "raptor_sarthi_2024",
+            "raptor_sarthi_2024",
+            "raptor_sarthi_2024",
+            "lost_in_middle_liu_2023"
+          ],
+          "chunk_ids": [
+            "raptor_sarthi_2024_s5_4_experiments_2",
+            "raptor_sarthi_2024_s1_abstract_0",
+            "raptor_sarthi_2024_s6_4_1_contribution_of_the_tree_structure_0",
+            "raptor_sarthi_2024_s2_1_introduction_0",
+            "lost_in_middle_liu_2023_s4_2_1_experimental_setup_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 40485.493100000895
+        },
+        {
+          "question": "How do the original RAG paper and Self-RAG differ in when retrieval is performed?",
+          "expected_paper_ids": [
+            "rag_lewis_2020",
+            "self_rag_asai_2023"
+          ],
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "self_rag_asai_2023",
+            "self_rag_asai_2023",
+            "self_rag_asai_2023",
+            "self_rag_asai_2023",
+            "rag_lewis_2020"
+          ],
+          "chunk_ids": [
+            "self_rag_asai_2023_s4_3_self_rag_learning_to_retrieve_generate_and_critique_0",
+            "self_rag_asai_2023_s18_6_conclusion_0",
+            "self_rag_asai_2023_s3_2_related_work_0",
+            "self_rag_asai_2023_s17_5_2_analysis_0",
+            "rag_lewis_2020_s1_abstract_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 35978.46800000116
+        },
+        {
+          "question": "Compare the retrieval ideas in the RAG survey with those proposed by CRAG.",
+          "expected_paper_ids": [
+            "rag_survey_gao_2023",
+            "crag_yan_2024"
+          ],
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "crag_yan_2024",
+            "crag_yan_2024",
+            "crag_yan_2024",
+            "crag_yan_2024",
+            "rag_survey_gao_2023"
+          ],
+          "chunk_ids": [
+            "crag_yan_2024_s11_5_1_tasks_datasets_and_metrics_0",
+            "crag_yan_2024_s12_5_2_baselines_0",
+            "crag_yan_2024_s0_corrective_retrieval_augmented_generation_0",
+            "crag_yan_2024_s19_6_conclusion_limitation_0",
+            "rag_survey_gao_2023_s28_c_hybrid_approaches_0"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 36652.68020000076
+        },
+        {
+          "question": "How are embeddings and reranking used across DPR and the Qwen3 Embedding paper?",
+          "expected_paper_ids": [
+            "dpr_karpukhin_2020",
+            "qwen3_embedding_2025"
+          ],
+          "recall": 1.0,
+          "reciprocal_rank": 1.0,
+          "retrieved_papers": [
+            "qwen3_embedding_2025",
+            "qwen3_embedding_2025",
+            "qwen3_embedding_2025",
+            "qwen3_embedding_2025",
+            "dpr_karpukhin_2020"
+          ],
+          "chunk_ids": [
+            "qwen3_embedding_2025_s5_3_1_training_objective_0",
+            "qwen3_embedding_2025_s10_4_2_main_results_0",
+            "qwen3_embedding_2025_s2_1_introduction_1",
+            "qwen3_embedding_2025_s12_5_conclusion_0",
+            "dpr_karpukhin_2020_s2_1_introduction_1"
+          ],
+          "actual_result_count": 5,
+          "scored_result_count": 5,
+          "route": "named_papers",
+          "latency_ms": 34528.57909999875
+        }
+      ],
+      "fixture_sha256": "3682a39667632ad776c334ae76d612d6fe81dc94cc155ac053a94761ebf5937e",
+      "fixture_provenance": "Development comparison benchmark: 10 questions."
+    }
+  },
+  "export_note": "Local artifact-root path and internal fixture-source identifiers omitted. Metrics and query-level results are unchanged; fixture hashes refer to the original evaluated files."
+}

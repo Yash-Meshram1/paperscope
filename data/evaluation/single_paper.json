@@ -1,0 +1,155 @@
+{
+  "provenance": "notebooks/07_evaluation.ipynb: evaluation_questions (30 rows)",
+  "questions": [
+    {
+      "question": "What are the two RAG formulations introduced by Lewis et al.?",
+      "expected_paper_id": "rag_lewis_2020",
+      "category": "factual"
+    },
+    {
+      "question": "What type of non-parametric memory does the original RAG model use?",
+      "expected_paper_id": "rag_lewis_2020",
+      "category": "factual"
+    },
+    {
+      "question": "How does DPR represent questions and passages for retrieval?",
+      "expected_paper_id": "dpr_karpukhin_2020",
+      "category": "factual"
+    },
+    {
+      "question": "Which datasets are used to evaluate DPR on open-domain question answering?",
+      "expected_paper_id": "dpr_karpukhin_2020",
+      "category": "factual"
+    },
+    {
+      "question": "What does MaxSim do in ColBERT?",
+      "expected_paper_id": "colbert_khattab_2020",
+      "category": "factual"
+    },
+    {
+      "question": "What is the main idea behind late interaction in ColBERT?",
+      "expected_paper_id": "colbert_khattab_2020",
+      "category": "factual"
+    },
+    {
+      "question": "What is a hypothetical document in HyDE?",
+      "expected_paper_id": "hyde_gao_2023",
+      "category": "factual"
+    },
+    {
+      "question": "How does Self-RAG decide when retrieval is necessary?",
+      "expected_paper_id": "self_rag_asai_2023",
+      "category": "factual"
+    },
+    {
+      "question": "What are reflection tokens in Self-RAG?",
+      "expected_paper_id": "self_rag_asai_2023",
+      "category": "factual"
+    },
+    {
+      "question": "What does the Lost in the Middle paper observe about information placed in the middle of long contexts?",
+      "expected_paper_id": "lost_in_middle_liu_2023",
+      "category": "factual"
+    },
+    {
+      "question": "How does HyDE perform zero-shot dense retrieval without relevance labels?",
+      "expected_paper_id": "hyde_gao_2023",
+      "category": "methodology"
+    },
+    {
+      "question": "How does RAPTOR organize documents for retrieval?",
+      "expected_paper_id": "raptor_sarthi_2024",
+      "category": "methodology"
+    },
+    {
+      "question": "How are recursive summaries created in RAPTOR?",
+      "expected_paper_id": "raptor_sarthi_2024",
+      "category": "methodology"
+    },
+    {
+      "question": "How does CRAG evaluate whether retrieved documents are useful?",
+      "expected_paper_id": "crag_yan_2024",
+      "category": "methodology"
+    },
+    {
+      "question": "What corrective actions does CRAG take when retrieval quality is poor?",
+      "expected_paper_id": "crag_yan_2024",
+      "category": "methodology"
+    },
+    {
+      "question": "How does Self-RAG use retrieval and critique during inference?",
+      "expected_paper_id": "self_rag_asai_2023",
+      "category": "methodology"
+    },
+    {
+      "question": "How does the original RAG architecture combine the retriever and generator?",
+      "expected_paper_id": "rag_lewis_2020",
+      "category": "methodology"
+    },
+    {
+      "question": "How is similarity computed between query and document representations in ColBERT?",
+      "expected_paper_id": "colbert_khattab_2020",
+      "category": "methodology"
+    },
+    {
+      "question": "What retrieval techniques are discussed in the RAG survey?",
+      "expected_paper_id": "rag_survey_gao_2023",
+      "category": "paper_specific"
+    },
+    {
+      "question": "What does the RAG survey describe as Naive RAG?",
+      "expected_paper_id": "rag_survey_gao_2023",
+      "category": "paper_specific"
+    },
+    {
+      "question": "How does the RAG survey describe iterative retrieval?",
+      "expected_paper_id": "rag_survey_gao_2023",
+      "category": "paper_specific"
+    },
+    {
+      "question": "What does the RAG survey say about modular RAG?",
+      "expected_paper_id": "rag_survey_gao_2023",
+      "category": "paper_specific"
+    },
+    {
+      "question": "What limitations of long-context language models are discussed in Lost in the Middle?",
+      "expected_paper_id": "lost_in_middle_liu_2023",
+      "category": "paper_specific"
+    },
+    {
+      "question": "What retrieval failure problem motivates Corrective RAG?",
+      "expected_paper_id": "crag_yan_2024",
+      "category": "paper_specific"
+    },
+    {
+      "question": "What role does MaxSim play in ColBERT's late interaction mechanism?",
+      "expected_paper_id": "colbert_khattab_2020",
+      "category": "exact_term"
+    },
+    {
+      "question": "How is the Retrieve reflection token used in Self-RAG?",
+      "expected_paper_id": "self_rag_asai_2023",
+      "category": "exact_term"
+    },
+    {
+      "question": "What is retrieval collapse in the original RAG paper?",
+      "expected_paper_id": "rag_lewis_2020",
+      "category": "exact_term"
+    },
+    {
+      "question": "How does RAPTOR use clustering when constructing its retrieval tree?",
+      "expected_paper_id": "raptor_sarthi_2024",
+      "category": "exact_term"
+    },
+    {
+      "question": "What model family is introduced for text embedding and reranking in the Qwen3 Embedding paper?",
+      "expected_paper_id": "qwen3_embedding_2025",
+      "category": "embedding"
+    },
+    {
+      "question": "How does the Qwen3 Embedding paper approach reranking?",
+      "expected_paper_id": "qwen3_embedding_2025",
+      "category": "embedding"
+    }
+  ]
+}
