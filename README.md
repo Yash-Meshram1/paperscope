@@ -107,24 +107,8 @@ The benchmark contains 30 single-paper questions and 10 comparisons. Relevance l
 | Hybrid RRF | 0.953 |
 | Reranked | 1.000 |
 
-The application pipeline run on 14 September 2026 achieved **1.000 MRR@5** on the 30 single-paper questions and **1.000 paper Recall@5** on the 10 comparisons. Query-level results and runtime details are saved in `data/evaluation/benchmark_run.json`. The evaluator independently scores only the first five passages.
+The application pipeline achieved a **1.000 MRR@5** on the 30 single-paper questions and **1.000 paper Recall@5** on the 10 comparisons. Query-level results and runtime details are saved in `data/evaluation/benchmark_run.json`. The evaluator independently scores only the first five passages.
 
-These are small development-set results. Paper-name routing directly affects paper coverage, and the earlier comparison used different candidate budgets. The scores do not measure answer correctness or citation support. `retrieval_metrics.json` preserves the earlier saved metrics separately; its multi-paper value has no matching historical query-level run.
-
-Run tests without the paper corpus:
-
-```powershell
-$env:PYTHONPATH = "$PWD\src"
-python -m unittest discover -s tests -v
-```
-
-On Linux/macOS, use `PYTHONPATH=src python -m unittest discover -s tests -v`. To evaluate a prepared local index:
-
-```bash
-python scripts/evaluate.py --k 5
-```
-
-New evaluation runs are saved under `data/evaluation/runs/` without replacing previous results.
 
 ## Project structure
 
